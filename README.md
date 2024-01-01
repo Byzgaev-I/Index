@@ -30,7 +30,29 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ### Решение:
 
+Вывод запроса:
 
 ![image](https://github.com/Byzgaev-I/Index/blob/main/Index%20-2.png)
 
+Я могу использовать EXPLAIN ANALYZE для нашего запроса:
+
+```
+EXPLAIN ANALYZE
+SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name),
+       SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title)
+FROM payment p
+JOIN rental r ON p.payment_date = r.rental_date
+JOIN customer c ON r.customer_id = c.customer_id
+JOIN inventory i ON i.inventory_id = r.inventory_id
+JOIN film f ON f.film_id = i.film_id
+WHERE DATE(p.payment_date) = '2005-07-30';
+
+```
+После выполнения этого запроса в вашей среде вы увидите подробный план выполнения и статистику, которая поможет идентифицировать узкие места.  
+Потенциальные узкие места могут включать:  
+Использование функции 'DATE()' на p.payment_date, что может препятствовать использованию индексов.  
+Возможное отсутствие индексов на ключевых столбцах для соединений и фильтрации.  
+
+
 ---
+
