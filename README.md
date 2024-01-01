@@ -59,6 +59,15 @@ WHERE DATE(p.payment_date) = '2005-07-30';
 
 ```sql
 WHERE p.payment_date >= '2005-07-30 00:00:00' AND p.payment_date < '2005-07-31 00:00:00'
+```
+
+Убедиться, что на следующих столбцах есть индексы:  
+
+- payment.payment_date
+- rental.rental_date
+- customer.customer_id
+- inventory.inventory_id
+- film.film_id
 
 
 
