@@ -31,6 +31,6 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ### Решение:
 
 
-![image]()
+![image](https://github.com/Byzgaev-I/Index/blob/main/Index%20-2.png)
 
 ---
