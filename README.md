@@ -14,6 +14,6 @@ from information_schema.tables
 where table_schema='sakila' and data_length is not null;
 ```
 
-![image]()
+![image](https://github.com/Byzgaev-I/Index/blob/main/Index%20-1.png)
 
 ---
