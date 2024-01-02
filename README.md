@@ -36,7 +36,7 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ![image](https://github.com/Byzgaev-I/Index/blob/main/Index%20-2.png)
 
-Я могу использовать EXPLAIN ANALYZE для нашего запроса:
+Использую EXPLAIN ANALYZE для нашего запроса:
 
 ```sql
 EXPLAIN ANALYZE
