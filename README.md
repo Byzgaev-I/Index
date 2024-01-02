@@ -8,8 +8,6 @@
 
 ### Решение:
 
-Конечно пергуглил кучу всего и немного в голове каша от количества инфы и нового
-
 ```sql
 select sum(data_length) as SUM_Data_Length, sum(index_length) as SUM_Index_Length, sum(index_length)*100.0/sum(data_length) as Persentage_ratio
 from information_schema.tables
@@ -32,6 +30,8 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ### Решение:
 
+Конечно пергуглил кучу всего и немного в голове каша от количества инфы и нового, но получилось так:
+
 Вывод запроса:
 
 ![image](https://github.com/Byzgaev-I/Index/blob/main/Index%20-2.png)
@@ -50,7 +50,7 @@ JOIN film f ON f.film_id = i.film_id
 WHERE DATE(p.payment_date) = '2005-07-30';
 
 ```
-После выполнения этого запроса в вашей среде вы увидите подробный план выполнения и статистику, которая поможет идентифицировать узкие места.  
+После выполнения этого запроса в нашей среде можно увидеть подробный план выполнения и статистику, которая поможет идентифицировать узкие места.  
 
 Потенциальные узкие места могут включать:  
 
